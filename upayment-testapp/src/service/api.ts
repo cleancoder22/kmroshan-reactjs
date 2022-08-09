@@ -9,7 +9,6 @@ if (process.env.REACT_APP_API_TOKEN) {
       "Authorization":`${process.env.REACT_APP_API_TOKEN}`
     };
   }
-  console.log("🚀 ~ file: api.ts ~ line 4 ~ axiosConfig", axiosConfig)
   const apiInstance = axios.create(axiosConfig);
 
   apiInstance.interceptors.response.use(
@@ -47,4 +46,16 @@ if (process.env.REACT_APP_API_TOKEN) {
 
   export const getProducts = () => {
     return get(`https://upayments-studycase-api.herokuapp.com/api/products`)
+  }
+
+  export const getProduct = (id:string | undefined) => {
+    return get(`https://upayments-studycase-api.herokuapp.com/api/products/${id}`)
+  }
+
+  export const getCatagories = () => {
+    return get(` https://upayments-studycase-api.herokuapp.com/api/categories/`)
+  } 
+  
+  export const getCatagory = (id:string | undefined) => {
+    return get(`https://upayments-studycase-api.herokuapp.com/api/categories/${id}`)
   }
