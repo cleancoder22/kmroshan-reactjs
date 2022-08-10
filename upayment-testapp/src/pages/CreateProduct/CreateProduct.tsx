@@ -88,7 +88,7 @@ export default function CreateProduct() {
             render={(props) => <FieldErrorMsg {...props} />}
           />
         </div>
-        
+
         <div className="w-[500px]">
           <textarea
             rows={4}
@@ -115,11 +115,11 @@ export default function CreateProduct() {
                 "
             {...register("description", { ...inputRules.description })}
           />
-           <ErrorMessage
-              errors={errors}
-              name={"description"}
-              render={(props) => <FieldErrorMsg {...props} />}
-            />
+          <ErrorMessage
+            errors={errors}
+            name={"description"}
+            render={(props) => <FieldErrorMsg {...props} />}
+          />
         </div>
 
         <div className="w-[500px]">
@@ -147,20 +147,21 @@ export default function CreateProduct() {
             placeholder="Image Url"
             {...register("avatar", { ...inputRules.imageUrl })}
           />
-           <ErrorMessage
-                errors={errors}
-                name={"avatar"}
-                render={(props) => <FieldErrorMsg {...props} />}
-              />
+          <ErrorMessage
+            errors={errors}
+            name={"avatar"}
+            render={(props) => <FieldErrorMsg {...props} />}
+          />
         </div>
 
         <div className="w-[500px]">
           <select
+            defaultValue={"all"}
             className="form-select shadow-md block w-full px-3 py-1.5 text-base font-normal text-gray-700 mx-auto border-none transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-lg w-full"
             aria-label="Default select example"
             {...register("category", { ...inputRules.category })}
           >
-            <option selected value="" disabled>
+            <option value="" disabled>
               Catagories
             </option>
             {categoryData?.categories?.map((category: categoryType) => {
@@ -168,10 +169,10 @@ export default function CreateProduct() {
             })}
           </select>
           <ErrorMessage
-                errors={errors}
-                name={"category"}
-                render={(props) => <FieldErrorMsg {...props} />}
-              />
+            errors={errors}
+            name={"category"}
+            render={(props) => <FieldErrorMsg {...props} />}
+          />
         </div>
 
         <div className="w-[500px]">
@@ -197,15 +198,14 @@ export default function CreateProduct() {
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                 "
             placeholder="Product Price"
-            {...register("price", { ...inputRules.price})}
+            {...register("price", { ...inputRules.price })}
           />
-           <ErrorMessage
-                errors={errors}
-                name={"price"}
-                render={(props) => <FieldErrorMsg {...props} />}
-              />
+          <ErrorMessage
+            errors={errors}
+            name={"price"}
+            render={(props) => <FieldErrorMsg {...props} />}
+          />
         </div>
-
       </div>
       <input
         type="submit"
