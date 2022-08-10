@@ -1,11 +1,13 @@
 import axios from "axios";
 
-const axiosConfig: any = {};
+const axiosConfig: any = {
+};
 
 if (process.env.REACT_APP_API_TOKEN) {
-  axiosConfig.headers = {
-    Authorization: `${process.env.REACT_APP_API_TOKEN}`,
-  };
+
+axiosConfig.headers = {
+  "Authorization": `${process.env.REACT_APP_API_TOKEN}`
+};
 }
 const apiInstance = axios.create(axiosConfig);
 

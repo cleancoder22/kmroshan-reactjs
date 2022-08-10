@@ -13,9 +13,19 @@ export default function ProductDetail() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center mx-auto max-w-[800px] mt-12" >
-        <Skeleton className="rounded-xl" count={1} height={260} width={800} ></Skeleton>
-        <Skeleton className="mt-8 rounded-xl" count={1} height={500} width={800}></Skeleton>
+      <div className="flex flex-col items-center justify-center mx-auto max-w-[800px] mt-12">
+        <Skeleton
+          className="rounded-xl"
+          count={1}
+          height={260}
+          width={800}
+        ></Skeleton>
+        <Skeleton
+          className="mt-8 rounded-xl"
+          count={1}
+          height={500}
+          width={800}
+        ></Skeleton>
       </div>
     );
   }
@@ -26,23 +36,31 @@ export default function ProductDetail() {
         <div className="container max-w-[800px] m-auto flex flex-col">
           <div className="title-container mt-12 flex flex-row">
             <div className="avatar rounded-xl overflow-hidden w-[220px] h-[230px]">
-              <img className="w-full h-full" src={productData?.product?.avatar} alt={productData?.product?.name} />
+              <img
+                className="w-full h-full"
+                src={productData?.product?.avatar}
+                alt={productData?.product?.name}
+              />
             </div>
-            
+
             <div className="flex justify-between flex-col ml-8">
               <div className="title">
-                <h1 className="text-[32px] font-bold">{productData?.product?.name}</h1>
+                <h1 className="text-[32px] font-bold">
+                  {productData?.product?.name}
+                </h1>
               </div>
-              <div className="price text-[22px] font-medium">$ {productData?.product?.price}</div>
+              <div className="price text-[22px] font-medium">
+                $ {productData?.product?.price}
+              </div>
             </div>
           </div>
-          <div className="w-100 h-[2px] bg-gray-500 my-8"  />
+          <div className="w-100 h-[2px] bg-gray-500 my-8" />
           <div className="dessc">
             <div>
-                <h1 className="font-medium text-[22px]">Description</h1>
+              <h1 className="font-medium text-[22px]">Description</h1>
             </div>
             <div className="mt-3">
-                <p>{productData?.product?.description}</p>
+              <p>{productData?.product?.description}</p>
             </div>
           </div>
         </div>
