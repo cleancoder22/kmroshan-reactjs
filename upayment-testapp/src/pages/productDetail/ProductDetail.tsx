@@ -2,21 +2,15 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getProduct } from "../../service/api";
 import Skeleton from "react-loading-skeleton";
-import Layout from "../../layout/Layout";
 
 export default function ProductDetail() {
   const { id } = useParams();
-
-  console.log("🚀 ~ file: ProductDetail.tsx ~ line 7 ~ ProductDetail ~ id", id);
 
   const { data: productData, isLoading } = useQuery(
     ["product Details", id],
     () => getProduct(id)
   );
-  console.log(
-    "🚀 ~ file: ProductDetail.tsx ~ line 12 ~ ProductDetail ~ productData",
-    productData
-  );
+
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center mx-auto max-w-[800px] mt-12" >
@@ -28,7 +22,7 @@ export default function ProductDetail() {
 
   return (
     <>
-      <div className="">
+      <div className="self-start">
         <div className="container max-w-[800px] m-auto flex flex-col">
           <div className="title-container mt-12 flex flex-row">
             <div className="avatar rounded-xl overflow-hidden w-[220px] h-[230px]">
